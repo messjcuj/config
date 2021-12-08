@@ -17,6 +17,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: USER-SERVICE-SIGNIN
+          uri: lb://UserService
+          predicates:
+            - Path=/auth/login,/users/register
         - id: USER-SERVICE
           uri: lb://UserService
           predicates:
@@ -29,7 +33,3 @@ spring:
             - Path=/todos/**  
           filters:
             - AuthFilters
-        - id: USER-SERVICE-SIGNIN
-          uri: lb://UserService
-          predicates:
-            - Path=/auth/login
