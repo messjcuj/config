@@ -3,8 +3,8 @@ server:
   
 eureka:
   client:
-    service-url:
-      defaul-zone: http://54.169.178.240:8761/eureka
+    serviceUrl:
+      defaultZone: http://54.169.178.240:8761/eureka
 
 management:
   endpoint:
