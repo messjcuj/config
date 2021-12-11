@@ -16,6 +16,15 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            allowed-origins: "*"
+            allowed-methods: 
+              - GET
+              - PUT
+              - POST
+              - DELETE
       routes:
         - id: USER-SERVICE-SIGNIN
           uri: lb://UserService
